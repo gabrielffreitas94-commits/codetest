@@ -1,4 +1,5 @@
 test_team_id = "platform"
+team_id = test_team_id
 test_events = [
     {
         "type": "pr_opened",

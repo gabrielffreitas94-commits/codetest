@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from mangum import Mangum
 from app.api.v1.router import api_router
 from app.core.config import settings
 
@@ -10,3 +11,6 @@ app = FastAPI(
 )
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+# AWS Lambda Handler via Mangum ASGI adapter
+handler = Mangum(app)
